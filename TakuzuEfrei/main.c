@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "fonction_Takuzu.h"
+#include "fonctions_main.h"
+#include "fonctions_resoudres.h"
 #include <string.h>
 
 
@@ -28,7 +29,8 @@ int main() {
     }else if (strcmp(choix,"resoudre")==0){            /* Partie où le joueur résout lui meme la grille de Takuzu */
         printf("\n");
         printf("Resoudre");
-        /* resoudre() */
+
+        resoudre();
 
     } else if (strcmp(choix,"auto")==0){                /* Partie où l'ordinateur  résout  la grille de Takuzu */
         printf("\n");
