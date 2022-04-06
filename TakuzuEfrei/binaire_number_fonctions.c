@@ -29,3 +29,25 @@ int binaire_to_decimal(int *tab, int indice) {
         }
     }
 }
+
+void decimal_to_binaire(int *T, int val){
+    int j,i=0,temp;
+    while (val>0){
+        T[i] = val%2;
+        val = val/2;
+        i++;
+    }
+
+    i -= 1;
+    j=0;
+    while (j<i){
+        temp = T[j];
+        T[j]=T[i];
+        T[i]=temp;
+        i--;
+        j++;
+    }
+    for (int i=0;i<4;i++) {
+        printf("%d", T[i]);
+    }
+}

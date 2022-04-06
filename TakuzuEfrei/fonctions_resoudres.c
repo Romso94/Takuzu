@@ -40,6 +40,7 @@ void resoudre() {
                 printf("|_____|_____|_____|_____|_____|\n");
 
                  */
+                
 
 
             } else if (taille_m==2){
