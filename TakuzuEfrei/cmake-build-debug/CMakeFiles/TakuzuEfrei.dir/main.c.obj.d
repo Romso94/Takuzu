@@ -22,4 +22,5 @@ CMakeFiles/TakuzuEfrei.dir/main.c.obj: \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/x86_64-w64-mingw32/include/getopt.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.2/bin/mingw/x86_64-w64-mingw32/include/pthread_unistd.h \
  C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\fonctions_main.h \
- C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\fonctions_resoudres.h
+ C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\fonctions_resoudres.h \
+ C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\fonction_generer_solution.h

@@ -3,6 +3,7 @@
 #include "fonctions_main.h"
 #include "fonctions_resoudres.h"
 #include <string.h>
+#include "fonction_generer_solution.h"
 
 
 
