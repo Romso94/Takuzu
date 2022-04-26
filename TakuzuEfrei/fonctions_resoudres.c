@@ -3,6 +3,7 @@
 //
 
 #include "fonctions_resoudres.h"
+#include "fonction_generer_solution.h"
 #include <stdio.h>
 
 
@@ -26,7 +27,8 @@ void resoudre() {
 
             if(taille_m==1){
                 printf("\n");
-                /* Forme matrice 4X4
+
+                /* Forme matrice 4X4 */
                 printf("_______________________________\n");
                 printf("|     |  A  |  B  |  C  |  D  |\n");
                 printf("|-----|-----|-----|-----|-----|\n");
@@ -39,7 +41,7 @@ void resoudre() {
                 printf("|  4  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0);
                 printf("|_____|_____|_____|_____|_____|\n");
 
-                 */
+                nbr_ale_4x();
 
 
 
