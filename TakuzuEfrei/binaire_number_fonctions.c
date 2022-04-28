@@ -31,23 +31,48 @@ int binaire_to_decimal(int *tab, int indice) {
 }
 
 void decimal_to_binaire(int *T, int val){
-    int j,i=0,temp;
-    while (val>0){
+    int i=0;
+    while (val!=0){
         T[i] = val%2;
+
         val = val/2;
+    /*
+        printf("\n");
+        printf("T[i] = %d\t",T[i]);
+        printf("\n");
+        printf("val = %d\t",val);
+    */
         i++;
     }
 
-    i -= 1;
-    j=0;
-    while (j<i){
-        temp = T[j];
-        T[j]=T[i];
-        T[i]=temp;
-        i--;
-        j++;
+    for (i;i<4;i++){
+        T[i]=0;
     }
-    for (int i=0;i<4;i++) {
-        printf("%d", T[i]);
+   // printf("\n %d\n",i);
+
+
+
+
+
+
+
+    inverserTableau(T,i);
+
+   //Lire le tableau
+   /* for(int j=0;j<i;j++){
+        printf("%d ",T[j]);
+    }
+    printf("\n"); */
+
+
+
+}
+
+void inverserTableau(int*T,int taille){
+    int i,j,temp;
+    for (i=0,j=taille-1;i<j;i++,j--){
+        temp = T[i];
+        T[i]=T[j];
+        T[j]=temp;
     }
 }

@@ -8,6 +8,7 @@
 int binaire_to_decimal(int *, int);
 int puissance(int,int);
 void decimal_to_binaire(int *T, int val);
+void inverserTableau(int*T,int taille);
 
 
 

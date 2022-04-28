@@ -1,37 +1,47 @@
 //
 // Created by Flo on 06/04/2022.
 //
+#include "fonction_generer_solution.h"
+#include "binaire_number_fonctions.h"
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include "fonction_generer_solution.h"
+
 #include <stdbool.h>
 
-void nbr_ale_4x(){
+void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
     srand(time(NULL));
     int j=0;
-    int t[4] ;
-    while (j<4) {
+    int t[4],nbr_a_choisir[10] = {2,3,4,5,6,9,10,11,12,13} ;
+    while (j<4){
 
-        int x = rand() %16 ;
-        printf("%d \n",x);
-        int liste[5] = {0, 1, 7, 8, 14, 15};
-        int nbr_interdit = verife(x, liste, 6);
-        int nbr_not_in_t = verife(x,t,4);
-
-        if (nbr_interdit == false && nbr_not_in_t == false) {
-            t[j]=x;
+        int x = rand() %10 ;
+        //printf("nombre aleatoire : %d\n",x);
+        int val = nbr_a_choisir[x];
+        int present = verife(val,t,j);
+        if (present==0){
+            t[j]=val;
             j++;
         }
+
     }
-    lire_tableau(t,4);
+
+    decimal_to_binaire(t1,t[0]);
+
+    decimal_to_binaire(t2,t[1]);
+
+    decimal_to_binaire(t3,t[2]);
+
+    decimal_to_binaire(t4,t[3]);
+
+
 
 }
 
 void lire_tableau(int* tableau,int taille){
     for(int i=0 ;i<taille;i++)
     {
-        printf("%d\n",tableau[i]);
+        printf("%d\t",tableau[i]);
 
     }
 }
@@ -40,11 +50,26 @@ int verife(int val, int *T,int taille_liste){
 
     for(int i=0 ;i<taille_liste;i++)
     {
-        if (val!= T[i]) {
-            return true;
+        if (val== T[i]) {
+            return 1;
         }
-        return false;
+
 
     }
+    return 0;
+
+}
+
+
+int verif_colonne(int *T1,int *T2,int *T3,int *T4,int taille){
+
+    for(int i=0;i<taille;i++){
+        int somme = 0;
+        somme += T1[i] + T2[i] + T3[i] + T4[i];
+        if (somme>2){
+            return 1;
+        }
+    }
+    return 0;
 
 }
