@@ -12,10 +12,10 @@
 void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
     srand(time(NULL));
     int j=0;
-    int t[4],nbr_a_choisir[9] = {2,3,4,5,6,9,10,12,13} ;
+    int t[4],nbr_a_choisir[8] = {2,3,4,5,6,9,10,12} ;
     while (j<4){
 
-        int x = rand() %9 ;
+        int x = rand() %8 ;
         //printf("nombre aleatoire : %d\n",x);
         int val = nbr_a_choisir[x];
         int present = verife(val,t,j);

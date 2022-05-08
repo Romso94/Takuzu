@@ -45,37 +45,50 @@ void resoudre() {
                 int masque_m4[4][4];
                 int m_solution4[4][4],ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4];
 
+
+
+
+                    printf("\n");
+
+                    printf("Chargement de la Matrice ...");
+
+                 do{
+                nbr_ale_4x(ligne_1,ligne_2,ligne_3,ligne_4);
+                verif_colon = verif_colonne(ligne_1,ligne_2,ligne_3,ligne_4,4);
+
+               } while (verif_colon==1);
+
                 if (masque==2){
                     generer_masque4(masque_m4);
 
-                } else{
+                } else {
                     printf("\n");
                     printf("Vous allez remplir vous meme le masque  \n");
 
-                    for (int i=0;i<4;i++){
-                        for(int j=0;j<4;j++){
+                    for (int i = 0; i < 4; i++) {
+                        for (int j = 0; j < 4; j++) {
                             do {
                                 printf("\n");
-                                a=j;
-                                printf("Choix 1 ou 0 pour la case [%d]",i+1);
+                                a = j;
+                                printf("Choix 1 ou 0 pour la case [%d]", i + 1);
                                 switch (a) {
 
-                                    case A:{
+                                    case A: {
                                         printf("[A] : ");
                                         break;
                                     }
 
-                                    case B:{
+                                    case B: {
                                         printf("[B] : ");
                                         break;
                                     }
 
-                                    case C:{
+                                    case C: {
                                         printf("[C] : ");
                                         break;
                                     }
 
-                                    case D:{
+                                    case D: {
                                         printf("[D] : ");
                                         break;
                                     }
@@ -83,28 +96,17 @@ void resoudre() {
 
                                 }
 
-                                scanf("%d",&masque_manu);
-                                masque_m4[i][j]=masque_manu;
+                                scanf("%d", &masque_manu);
+                                masque_m4[i][j] = masque_manu;
 
-                            } while (masque_manu<0 || masque_manu>1);
+                            } while (masque_manu < 0 || masque_manu > 1);
                         }
 
                     }
-
-
-                        printf("\n");
-
-                        printf("Chargement de la Matrice ...");
-                 do{
-                nbr_ale_4x(ligne_1,ligne_2,ligne_3,ligne_4);
-                verif_colon = verif_colonne(ligne_1,ligne_2,ligne_3,ligne_4,4);
-
-               } while (verif_colon==1);
-
-
-
-
                 }
+
+
+
 
 
                 solution(m_solution4,ligne_1,ligne_2,ligne_3,ligne_4,4);
@@ -244,7 +246,7 @@ void resoudre() {
 
             */
 
-            masque_auto();
+
 
 }
 
@@ -278,25 +280,20 @@ int taille(){
 
 }
 
-void masque_auto(){
 
-}
+void solution(int m2d[4][4],int* m1,int *m2,int* m3,int* m4,int taille) {
+    int j = 0, i = 0;
 
-void solution(int m2d[4][4],int* m1,int *m2,int* m3,int* m4,int taille){
-    int j=0,i=0;
-
-    for (j;j<taille;j++){
-        i=0;
-        m2d[i][j]= m1[j];
+    for (j; j < taille; j++) {
+        i = 0;
+        m2d[i][j] = m1[j];
         i++;
-        m2d[i][j]=m2[j];
+        m2d[i][j] = m2[j];
         i++;
-        m2d[i][j]=m3[j];
+        m2d[i][j] = m3[j];
         i++;
-        m2d[i][j]=m4[j];
+        m2d[i][j] = m4[j];
         i++;
-
-
     }
 
 }
