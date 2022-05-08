@@ -9,33 +9,42 @@
 
 
 void resoudre() {
-    int choix;
+    int choix,masque;
+    int taille_m,ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4],verif_colon;
+
     printf("\n");
-    printf("Dans ce mode de jeu vous avez plusieurs options : \n");
-    printf("1. Choisir la taille \n");
-    printf("2. Saisir manuellement un masque \n");
-    printf("3. G%cn%crer automatiquement un masque \n", 130, 130);
-    printf("4. Jouer \n");
-    printf("Choisir une option : ");
+    printf("Pour commencer veuillez choisir la taille de la matrice :  \n");
 
-    scanf("%d", &choix);
 
-    switch (choix) {
-        case 1: {
-            int taille_m,ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4],verif_colon;
+
             taille_m = taille();
 
+
+
+
+
+
+                do {
+                    printf("\n");
+                    printf("Choisir une options pour g%cn%crer le masque :  \n",130,130);
+                    printf("1. Manuellement  \n");
+                    printf("2. Automatiquement  \n");
+                    printf("Choix : ");
+                    scanf("%d",&masque);
+                } while (masque>2 || masque<1);
+
             if(taille_m==1){
-                printf("\n");
 
-                printf("Chargement de la Matrice ...");
-                do{
-                    nbr_ale_4x(ligne_1,ligne_2,ligne_3,ligne_4);
+                        printf("\n");
 
-                    verif_colon = verif_colonne(ligne_1,ligne_2,ligne_3,ligne_4,4);
-                } while (verif_colon==1);
+                        printf("Chargement de la Matrice ...");
+                 do{
+                nbr_ale_4x(ligne_1,ligne_2,ligne_3,ligne_4);
+                verif_colon = verif_colonne(ligne_1,ligne_2,ligne_3,ligne_4,4);
 
-                /* Forme matrice 4X4 */
+               } while (verif_colon==1);
+
+                /* Forme matrice 4X4
                 printf("\n");
                 printf("_______________________________\n");
                 printf("|     |  A  |  B  |  C  |  D  |\n");
@@ -50,12 +59,12 @@ void resoudre() {
                 printf("|_____|_____|_____|_____|_____|\n");
 
 
+                */
 
 
-
-            } else if (taille_m==2){
+            }/* else if (taille_m==2){
                 printf("\n");
-                /* Forme matrice 8X8
+                 Forme matrice 8X8
                 printf("_______________________________________________________\n");
                 printf("|     |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |\n");
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
@@ -75,35 +84,31 @@ void resoudre() {
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
                 printf("|  8  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
                 printf("|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
-                */
 
 
-            }
 
-            break;
-        }
 
         case 2: {
-            /* Saisir_Masque() */
+             Saisir_Masque()
 
             break;
         }
 
         case 3: {
-            /* Generer_Masque() */
+             Generer_Masque()
 
             break;
         }
 
         case 4: {
-            /* Jouer */
+            Jouer
 
             break;
         }
         default: {
             resoudre();
 
-        }
+        } */
     }
 }
 

@@ -12,7 +12,7 @@
 void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
     srand(time(NULL));
     int j=0;
-    int t[4],nbr_a_choisir[10] = {2,3,4,5,6,9,10,11,12,13} ;
+    int t[4],nbr_a_choisir[9] = {2,3,4,5,6,9,10,12,13} ;
     while (j<4){
 
         int x = rand() %10 ;
@@ -66,7 +66,7 @@ int verif_colonne(int *T1,int *T2,int *T3,int *T4,int taille){
     for(int i=0;i<taille;i++){
         int somme = 0;
         somme += T1[i] + T2[i] + T3[i] + T4[i];
-        if (somme>2){
+        if (somme!=2){
             return 1;
         }
     }
