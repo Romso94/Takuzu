@@ -4,7 +4,9 @@
 
 #ifndef TAKUZUEFREI_FONCTIONS_RESOUDRES_H
 #define TAKUZUEFREI_FONCTIONS_RESOUDRES_H
-
+typedef enum  {
+    A,B,C,D
+}colonne4;
 
 void resoudre();
 

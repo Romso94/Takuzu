@@ -12,7 +12,8 @@
 
 void resoudre() {
     int choix,masque,masque_manu;
-    int taille_m,**m_solution4=NULL,verif_colon;
+    int taille_m,verif_colon;
+    colonne4 a;
 
 
     printf("\n");
@@ -44,6 +45,51 @@ void resoudre() {
                 int masque_m4[4][4];
                 int m_solution4[4][4],ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4];
 
+                if (masque==2){
+                    generer_masque4(masque_m4);
+
+                } else{
+                    printf("\n");
+                    printf("Vous allez remplir vous meme le masque  \n");
+
+                    for (int i=0;i<4;i++){
+                        for(int j=0;j<4;j++){
+                            do {
+                                printf("\n");
+                                a=j;
+                                printf("Choix 1 ou 0 pour la case [%d]",i+1);
+                                switch (a) {
+
+                                    case A:{
+                                        printf("[A] : ");
+                                        break;
+                                    }
+
+                                    case B:{
+                                        printf("[B] : ");
+                                        break;
+                                    }
+
+                                    case C:{
+                                        printf("[C] : ");
+                                        break;
+                                    }
+
+                                    case D:{
+                                        printf("[D] : ");
+                                        break;
+                                    }
+
+
+                                }
+
+                                scanf("%d",&masque_manu);
+                                masque_m4[i][j]=masque_manu;
+
+                            } while (masque_manu<0 || masque_manu>1);
+                        }
+
+                    }
 
 
                         printf("\n");
@@ -54,25 +100,12 @@ void resoudre() {
                 verif_colon = verif_colonne(ligne_1,ligne_2,ligne_3,ligne_4,4);
 
                } while (verif_colon==1);
-                if (masque==2){
-                generer_masque4(masque_m4);
 
-                } else{
-                    printf("\n");
-                    printf("Vous allez remplir vous meme le masque  \n");
 
-                    for (int i=0;i<4;i++){
-                        for(int j=0;j<4;j++){
-                            do {
-                                printf("\n");
-                                printf("Choix 1 ou 0 pour la case [%d][%d] : ",i,j);
-                                scanf("%d",&masque_manu);
-                                masque_m4[i][j]=masque_manu;
 
-                            } while (masque_manu<0 || masque_manu>1);
-                        }
-                    }
+
                 }
+
 
                 solution(m_solution4,ligne_1,ligne_2,ligne_3,ligne_4,4);
 
@@ -157,22 +190,22 @@ void resoudre() {
                 printf("|-----|-----|-----|-----|-----|\n");
                 printf("|  4  |");
                 if (masque_m4[3][0]==1) {
-                    printf("  %d  |", m_solution4[2][0]);
+                    printf("  %d  |", m_solution4[3][0]);
                 } else{
                     printf("     |");
                 }
                 if (masque_m4[3][1]==1) {
-                    printf("  %d  |", m_solution4[2][1]);
+                    printf("  %d  |", m_solution4[3][1]);
                 } else{
                     printf("     |");
                 }
                 if (masque_m4[3][2]==1) {
-                    printf("  %d  |",m_solution4[2][2]);
+                    printf("  %d  |",m_solution4[3][2]);
                 } else{
                     printf("     |");
                 }
                 if (masque_m4[3][3]==1) {
-                    printf("  %d  |\n",m_solution4[2][3]);
+                    printf("  %d  |\n",m_solution4[3][3]);
                 } else{
                     printf("     |\n");
                 }
