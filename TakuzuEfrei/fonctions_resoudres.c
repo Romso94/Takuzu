@@ -4,13 +4,14 @@
 
 #include "fonctions_resoudres.h"
 #include "fonction_generer_solution.h"
+#include "fonctions_generer_masque.h"
 #include <stdio.h>
 #include <stdlib.h>
 
 
 
 void resoudre() {
-    int choix,masque;
+    int choix,masque,masque_manu;
     int taille_m,**m_solution4=NULL,verif_colon;
 
 
@@ -40,10 +41,7 @@ void resoudre() {
 
 
             if(taille_m==1){
-                int masque_m4[4][4]={0,1,0,0,
-                                     1,0,0,1,
-                                     0,1,0,0,
-                                     0,0,1,1};
+                int masque_m4[4][4];
                 int m_solution4[4][4],ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4];
 
 
@@ -56,6 +54,25 @@ void resoudre() {
                 verif_colon = verif_colonne(ligne_1,ligne_2,ligne_3,ligne_4,4);
 
                } while (verif_colon==1);
+                if (masque==2){
+                generer_masque4(masque_m4);
+
+                } else{
+                    printf("\n");
+                    printf("Vous allez remplir vous meme le masque  \n");
+
+                    for (int i=0;i<4;i++){
+                        for(int j=0;j<4;j++){
+                            do {
+                                printf("\n");
+                                printf("Choix 1 ou 0 pour la case [%d][%d] : ",i,j);
+                                scanf("%d",&masque_manu);
+                                masque_m4[i][j]=masque_manu;
+
+                            } while (masque_manu<0 || masque_manu>1);
+                        }
+                    }
+                }
 
                 solution(m_solution4,ligne_1,ligne_2,ligne_3,ligne_4,4);
 
