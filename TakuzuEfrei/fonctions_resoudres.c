@@ -5,12 +5,14 @@
 #include "fonctions_resoudres.h"
 #include "fonction_generer_solution.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 
 
 void resoudre() {
     int choix,masque;
-    int taille_m,ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4],verif_colon;
+    int taille_m,**m_solution4=NULL,verif_colon;
+
 
     printf("\n");
     printf("Pour commencer veuillez choisir la taille de la matrice :  \n");
@@ -33,7 +35,18 @@ void resoudre() {
                     scanf("%d",&masque);
                 } while (masque>2 || masque<1);
 
+
+
+
+
             if(taille_m==1){
+                int masque_m4[4][4]={0,1,0,0,
+                                     1,0,0,1,
+                                     0,1,0,0,
+                                     0,0,1,1};
+                int m_solution4[4][4],ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4];
+
+
 
                         printf("\n");
 
@@ -44,22 +57,115 @@ void resoudre() {
 
                } while (verif_colon==1);
 
-                /* Forme matrice 4X4
+                solution(m_solution4,ligne_1,ligne_2,ligne_3,ligne_4,4);
+
+                /* Forme matrice 4X4 */
                 printf("\n");
                 printf("_______________________________\n");
                 printf("|     |  A  |  B  |  C  |  D  |\n");
                 printf("|-----|-----|-----|-----|-----|\n");
-                printf("|  1  |  %d  |  %d  |  %d  |  %d  |\n",ligne_1[0],ligne_1[1],ligne_1[2],ligne_1[3]);
+                printf("|  1  |");
+                if (masque_m4[0][0]==1) {
+                    printf("  %d  |", m_solution4[0][0]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[0][1]==1) {
+                    printf("  %d  |", m_solution4[0][1]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[0][2]==1) {
+                    printf("  %d  |",m_solution4[0][2]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[0][3]==1) {
+                    printf("  %d  |\n",m_solution4[0][3]);
+                } else{
+                    printf("     |\n");
+                }
+
+
                 printf("|-----|-----|-----|-----|-----|\n");
-                printf("|  2  |  %d  |  %d  |  %d  |  %d  |\n",ligne_2[0],ligne_2[1],ligne_2[2],ligne_2[3]);
+                printf("|  2  |");
+
+                if (masque_m4[1][0]==1) {
+                    printf("  %d  |", m_solution4[1][0]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[1][1]==1) {
+                    printf("  %d  |", m_solution4[1][1]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[1][2]==1) {
+                    printf("  %d  |",m_solution4[1][2]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[1][3]==1) {
+                    printf("  %d  |\n",m_solution4[1][3]);
+                } else{
+                    printf("     |\n");
+                }
+
+
+
                 printf("|-----|-----|-----|-----|-----|\n");
-                printf("|  3  |  %d  |  %d  |  %d  |  %d  |\n",ligne_3[0],ligne_3[1],ligne_3[2],ligne_3[3]);
+                printf("|  3  |");
+
+                if (masque_m4[2][0]==1) {
+                    printf("  %d  |", m_solution4[2][0]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[2][1]==1) {
+                    printf("  %d  |", m_solution4[2][1]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[2][2]==1) {
+                    printf("  %d  |",m_solution4[2][2]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[2][3]==1) {
+                    printf("  %d  |\n",m_solution4[2][3]);
+                } else{
+                    printf("     |\n");
+                }
+
                 printf("|-----|-----|-----|-----|-----|\n");
-                printf("|  4  |  %d  |  %d  |  %d  |  %d  |\n",ligne_4[0],ligne_4[1],ligne_4[2],ligne_4[3]);
+                printf("|  4  |");
+                if (masque_m4[3][0]==1) {
+                    printf("  %d  |", m_solution4[2][0]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[3][1]==1) {
+                    printf("  %d  |", m_solution4[2][1]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[3][2]==1) {
+                    printf("  %d  |",m_solution4[2][2]);
+                } else{
+                    printf("     |");
+                }
+                if (masque_m4[3][3]==1) {
+                    printf("  %d  |\n",m_solution4[2][3]);
+                } else{
+                    printf("     |\n");
+                }
+
+
+
                 printf("|_____|_____|_____|_____|_____|\n");
 
 
-                */
+
 
 
             }/* else if (taille_m==2){
@@ -86,30 +192,10 @@ void resoudre() {
                 printf("|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
 
 
+            */
 
+            masque_auto();
 
-        case 2: {
-             Saisir_Masque()
-
-            break;
-        }
-
-        case 3: {
-             Generer_Masque()
-
-            break;
-        }
-
-        case 4: {
-            Jouer
-
-            break;
-        }
-        default: {
-            resoudre();
-
-        } */
-    }
 }
 
 
@@ -137,6 +223,29 @@ int taille(){
         default:{
             taille();
         }
+
+    }
+
+}
+
+void masque_auto(){
+
+}
+
+void solution(int m2d[4][4],int* m1,int *m2,int* m3,int* m4,int taille){
+    int j=0,i=0;
+
+    for (j;j<taille;j++){
+        i=0;
+        m2d[i][j]= m1[j];
+        i++;
+        m2d[i][j]=m2[j];
+        i++;
+        m2d[i][j]=m3[j];
+        i++;
+        m2d[i][j]=m4[j];
+        i++;
+
 
     }
 
