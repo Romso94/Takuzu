@@ -44,6 +44,7 @@ void resoudre() {
             if(taille_m==1){
                 int masque_m4[4][4];
                 int m_solution4[4][4],ligne_1[4],ligne_2[4],ligne_3[4],ligne_4[4];
+                int jouer[4][4];
 
 
 
@@ -120,8 +121,8 @@ void resoudre() {
                 printf("|  1  |");
                 if (masque_m4[0][0]==1) {
                     printf("  %d  |", m_solution4[0][0]);
-                } else{
-                    printf("     |");
+               } else{
+                  printf("     |");
                 }
                 if (masque_m4[0][1]==1) {
                     printf("  %d  |", m_solution4[0][1]);
@@ -146,23 +147,23 @@ void resoudre() {
                 if (masque_m4[1][0]==1) {
                     printf("  %d  |", m_solution4[1][0]);
                 } else{
-                    printf("     |");
-                }
-                if (masque_m4[1][1]==1) {
+                printf("     |");
+              }
+              if (masque_m4[1][1]==1) {
                     printf("  %d  |", m_solution4[1][1]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[1][2]==1) {
+              } else{
+               printf("     |");
+             }
+             if (masque_m4[1][2]==1) {
                     printf("  %d  |",m_solution4[1][2]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[1][3]==1) {
+              } else{
+               printf("     |");
+             }
+               if (masque_m4[1][3]==1) {
                     printf("  %d  |\n",m_solution4[1][3]);
-                } else{
-                    printf("     |\n");
-                }
+               } else{
+                   printf("     |\n");
+               }
 
 
 
@@ -171,53 +172,56 @@ void resoudre() {
 
                 if (masque_m4[2][0]==1) {
                     printf("  %d  |", m_solution4[2][0]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[2][1]==1) {
+             } else{
+                printf("     |");
+               }
+               if (masque_m4[2][1]==1) {
                     printf("  %d  |", m_solution4[2][1]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[2][2]==1) {
+               } else{
+               printf("     |");
+
+             }
+               if (masque_m4[2][2]==1) {
                     printf("  %d  |",m_solution4[2][2]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[2][3]==1) {
+              } else{
+                printf("     |");
+              }
+              if (masque_m4[2][3]==1) {
                     printf("  %d  |\n",m_solution4[2][3]);
-                } else{
-                    printf("     |\n");
-                }
+              } else{
+                  printf("     |\n");
+              }
 
                 printf("|-----|-----|-----|-----|-----|\n");
                 printf("|  4  |");
-                if (masque_m4[3][0]==1) {
+               if (masque_m4[3][0]==1) {
                     printf("  %d  |", m_solution4[3][0]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[3][1]==1) {
+             } else{
+                   printf("     |");
+               }
+             if (masque_m4[3][1]==1) {
                     printf("  %d  |", m_solution4[3][1]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[3][2]==1) {
+            } else{
+              printf("     |");
+            }
+            if (masque_m4[3][2]==1) {
                     printf("  %d  |",m_solution4[3][2]);
-                } else{
-                    printf("     |");
-                }
-                if (masque_m4[3][3]==1) {
-                    printf("  %d  |\n",m_solution4[3][3]);
-                } else{
-                    printf("     |\n");
-                }
+              } else{
+               printf("     |");
+               }
+             if (masque_m4[3][3]==1) {
+                  printf("  %d  |\n",m_solution4[3][3]);
+           } else{
+             printf("     |\n");
+            }
 
 
 
                 printf("|_____|_____|_____|_____|_____|\n");
+                fill_matrice_joueur4(jouer[4][4],masque_m4[4][4],m_solution4[4][4]);
 
-             //   Jouer(masque_m4[4][4],m_solution4[4][4]);
+
+           //   Jouer(jouer[4][4],masque_m4[4][4],m_solution4[4][4]);
 
 
 
@@ -301,22 +305,68 @@ void solution(int m2d[4][4],int* m1,int *m2,int* m3,int* m4,int taille) {
 
 }
 
-void Jouer(int matrice_masque[4][4],int matrice_solution[4][4]){
-    int matrice_joueur[4][4],run=1,ligne;
-    colonne colone;
+void Jouer(int matrice_joueur[4][4],int matrice_masque[4][4],int matrice_solution[4][4]){
+    int run=1,ligne,colonne_val,remplis_case,mat_rempli;
+    char colonne_entry;
 
-    fill_matrice_joueur4(matrice_joueur[4][4],matrice_masque[4][4],matrice_solution[4][4]);
+    printf("Debut du Jeu\n");
 
     while (run==1){
 
         printf("\n");
-        printf("Debut du Jeu\n");
-        printf("Vous allez choisir une case a remplir :\n");
-        printf("Num%cro de la ligne (1 %c 4) :\n",130,138);
-        scanf("%d",ligne);
 
-        printf("Num%cro de la colonne (A %c D) :\n",130,138);
+        do {
+            printf("Vous allez choisir une case a remplir \n");
 
+            do {
+                printf("Num%cro de la ligne (1 %c 4) :", 130, 133);
+                scanf("%d", &ligne);
+            } while (ligne < 1 || ligne > 4);
+
+            printf("\n");
+
+            do {
+
+                printf("Num%cro de la colonne (A %c D) :", 130, 133);
+                getchar();
+                scanf("%c", &colonne_entry);
+            } while (colonne_entry < 65 || colonne_entry > 68);
+
+            printf("Vous avez choissi la ligne %d et la colone %c", ligne, colonne_entry);
+            if (colonne_entry == 'A') {
+                colonne_val = 1;
+            } else if (colonne_entry == 'B') {
+                colonne_val = 2;
+            } else if (colonne_entry == 'C') {
+                colonne_val = 3;
+            } else if (colonne_entry == 'D') {
+                colonne_val = 4;
+            }
+            printf("\n");
+
+            if (matrice_joueur[ligne][colonne_val]!=-1){
+                printf("La case est deja rempli !!! \n");
+                printf("\n");
+            }
+        } while (matrice_joueur[ligne][colonne_val]!=-1);
+
+
+
+
+
+        do {
+            printf("\n");
+            printf("Remplir la case [%d][%c] avec un 1 ou 0 :",ligne,colonne_entry);
+            scanf("%d",&remplis_case);
+            printf("\n");
+        } while (remplis_case>1 || remplis_case<0);
+
+
+        mat_rempli = fill_(matrice_joueur[4][4]);
+
+        if (mat_rempli==0){
+            run = 0;
+        }
 
 
 
@@ -337,4 +387,15 @@ void fill_matrice_joueur4(int matrice[4][4],int masque[4][4],int solution[4][4] 
             }
         }
     }
+}
+
+int fill_(int matrice[4][4]){
+    for (int i =0;i<4;i++){
+        for (int j=0;j<4;j++){
+            if (matrice[i][j]==-1){
+                return 1;
+            }
+        }
+    }
+    return 0;
 }
