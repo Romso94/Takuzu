@@ -21,15 +21,11 @@ void generer_masque4(int matrice[4][4]){
                 matrice[a][b]=1;
 
 
-
-
             } else{
                 matrice[a][b]=0;
 
             }
         }
-
-
     }
 
 

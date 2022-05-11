@@ -26,6 +26,9 @@ int main() {
     if (strcmp(choix,"regles")==0){                     /* Affiche les règles */
         printf("\n");
         regles();
+        printf("\n");
+        sleep(5);
+        main();
 
     }else if (strcmp(choix,"resoudre")==0){            /* Partie où le joueur résout lui meme la grille de Takuzu */
         printf("\n");

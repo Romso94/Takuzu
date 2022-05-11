@@ -13,7 +13,7 @@
 void resoudre() {
     int choix,masque,masque_manu;
     int taille_m,verif_colon;
-    colonne4 a;
+    colonne a;
 
 
     printf("\n");
@@ -62,6 +62,7 @@ void resoudre() {
                     generer_masque4(masque_m4);
 
                 } else {
+                    printf("\n");
                     printf("\n");
                     printf("Vous allez remplir vous meme le masque  \n");
 
@@ -216,35 +217,37 @@ void resoudre() {
 
                 printf("|_____|_____|_____|_____|_____|\n");
 
+             //   Jouer(masque_m4[4][4],m_solution4[4][4]);
 
 
 
 
-            }/* else if (taille_m==2){
+
+            } else if (taille_m==2) {
                 printf("\n");
-                 Forme matrice 8X8
+                // Forme matrice 8X8
                 printf("_______________________________________________________\n");
                 printf("|     |  A  |  B  |  C  |  D  |  E  |  F  |  G  |  H  |\n");
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  1  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  1  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  2  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  2  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  3  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  3  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  4  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  4  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  5  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  5  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  6  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  6  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  7  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  7  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
-                printf("|  8  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n",0,0,0,0,0,0,0,0);
+                printf("|  8  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |  %d  |\n", 0, 0, 0, 0, 0, 0, 0, 0);
                 printf("|_____|_____|_____|_____|_____|_____|_____|_____|_____|\n");
 
 
-            */
+            }
 
 
 
@@ -296,4 +299,42 @@ void solution(int m2d[4][4],int* m1,int *m2,int* m3,int* m4,int taille) {
         i++;
     }
 
+}
+
+void Jouer(int matrice_masque[4][4],int matrice_solution[4][4]){
+    int matrice_joueur[4][4],run=1,ligne;
+    colonne colone;
+
+    fill_matrice_joueur4(matrice_joueur[4][4],matrice_masque[4][4],matrice_solution[4][4]);
+
+    while (run==1){
+
+        printf("\n");
+        printf("Debut du Jeu\n");
+        printf("Vous allez choisir une case a remplir :\n");
+        printf("Num%cro de la ligne (1 %c 4) :\n",130,138);
+        scanf("%d",ligne);
+
+        printf("Num%cro de la colonne (A %c D) :\n",130,138);
+
+
+
+
+
+
+    }
+
+
+}
+
+void fill_matrice_joueur4(int matrice[4][4],int masque[4][4],int solution[4][4] ){
+    for (int i =0;i<4;i++){
+        for (int j=0;j<4;j++){
+            if (masque[i][j]==1){
+                matrice[i][j]=solution[i][j];
+            } else{
+                matrice[i][j]= -1;
+            }
+        }
+    }
 }
