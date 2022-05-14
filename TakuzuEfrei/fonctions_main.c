@@ -3,7 +3,7 @@
 //
 
 #include "fonctions_main.h"
-
+#include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
 
@@ -34,4 +34,14 @@ void regles(){
     printf("R%cgles num%cros 4 : Il ne peut pas y avoir deux colonnes identiques dans une grille \n",138,130);
     printf("R%cgles num%cros 5 : Dans une ligne ou une colonne, il ne peut y avoir plus de deux 0 ou deux 1 %c la suite \n"
            "(on ne peut pas avoir trois 0 de suite ou trois 1 de suite) \n",138,130,133);
+}
+
+
+int** generer_matrice(int taille, int** Matrice){
+    int i =0;
+    Matrice = (int**) malloc(taille * sizeof(int*));
+    for(i;i<taille;i++){
+        *(Matrice+i) = (int*) malloc(taille * sizeof(int));
+    }
+    return Matrice;
 }

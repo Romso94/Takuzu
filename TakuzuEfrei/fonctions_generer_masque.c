@@ -9,7 +9,7 @@
 
 
 
-void generer_masque4(int matrice[4][4]){
+int** generer_masque(int** matrice){
 
     srand(time(NULL));
     int j=0,x;
@@ -22,16 +22,17 @@ void generer_masque4(int matrice[4][4]){
 
 
             } else{
-                matrice[a][b]=0;
+                matrice[a][b]=-1;
 
             }
         }
-    }
 
+    }
+    return matrice;
 
 }
 
-void affichermatrice(int matrice[4][4]){
+void affichermatrice(int** matrice){
 
     for(int i=0;i<4;i++){
 

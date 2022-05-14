@@ -8,6 +8,6 @@
 
 void choix_joueur();
 void regles();
-
+int** generer_matrice(int taille, int** Matrice);
 
 #endif //TAKUZUEFREI_FONCTIONS_MAIN_H

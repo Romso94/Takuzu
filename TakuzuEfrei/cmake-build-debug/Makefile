@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.3.2\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei
+CMAKE_SOURCE_DIR = C:\Users\Romai\Desktop\TakuzuL1-main\TakuzuEfrei
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\Romai\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug\CMakeFiles C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Romai\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug\CMakeFiles C:\Users\Romai\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Flo\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Romai\Desktop\TakuzuL1-main\TakuzuEfrei\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -127,6 +127,78 @@ TakuzuEfrei: cmake_check_build_system
 TakuzuEfrei/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/build
 .PHONY : TakuzuEfrei/fast
+
+binaire_number_fonctions.obj: binaire_number_fonctions.c.obj
+.PHONY : binaire_number_fonctions.obj
+
+# target to build an object file
+binaire_number_fonctions.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/binaire_number_fonctions.c.obj
+.PHONY : binaire_number_fonctions.c.obj
+
+binaire_number_fonctions.i: binaire_number_fonctions.c.i
+.PHONY : binaire_number_fonctions.i
+
+# target to preprocess a source file
+binaire_number_fonctions.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/binaire_number_fonctions.c.i
+.PHONY : binaire_number_fonctions.c.i
+
+binaire_number_fonctions.s: binaire_number_fonctions.c.s
+.PHONY : binaire_number_fonctions.s
+
+# target to generate assembly for a file
+binaire_number_fonctions.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/binaire_number_fonctions.c.s
+.PHONY : binaire_number_fonctions.c.s
+
+fonction_generer_solution.obj: fonction_generer_solution.c.obj
+.PHONY : fonction_generer_solution.obj
+
+# target to build an object file
+fonction_generer_solution.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/fonction_generer_solution.c.obj
+.PHONY : fonction_generer_solution.c.obj
+
+fonction_generer_solution.i: fonction_generer_solution.c.i
+.PHONY : fonction_generer_solution.i
+
+# target to preprocess a source file
+fonction_generer_solution.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/fonction_generer_solution.c.i
+.PHONY : fonction_generer_solution.c.i
+
+fonction_generer_solution.s: fonction_generer_solution.c.s
+.PHONY : fonction_generer_solution.s
+
+# target to generate assembly for a file
+fonction_generer_solution.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/fonction_generer_solution.c.s
+.PHONY : fonction_generer_solution.c.s
+
+fonctions_generer_masque.obj: fonctions_generer_masque.c.obj
+.PHONY : fonctions_generer_masque.obj
+
+# target to build an object file
+fonctions_generer_masque.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/fonctions_generer_masque.c.obj
+.PHONY : fonctions_generer_masque.c.obj
+
+fonctions_generer_masque.i: fonctions_generer_masque.c.i
+.PHONY : fonctions_generer_masque.i
+
+# target to preprocess a source file
+fonctions_generer_masque.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/fonctions_generer_masque.c.i
+.PHONY : fonctions_generer_masque.c.i
+
+fonctions_generer_masque.s: fonctions_generer_masque.c.s
+.PHONY : fonctions_generer_masque.s
+
+# target to generate assembly for a file
+fonctions_generer_masque.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TakuzuEfrei.dir\build.make CMakeFiles/TakuzuEfrei.dir/fonctions_generer_masque.c.s
+.PHONY : fonctions_generer_masque.c.s
 
 fonctions_main.obj: fonctions_main.c.obj
 .PHONY : fonctions_main.obj
@@ -209,6 +281,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... TakuzuEfrei
+	@echo ... binaire_number_fonctions.obj
+	@echo ... binaire_number_fonctions.i
+	@echo ... binaire_number_fonctions.s
+	@echo ... fonction_generer_solution.obj
+	@echo ... fonction_generer_solution.i
+	@echo ... fonction_generer_solution.s
+	@echo ... fonctions_generer_masque.obj
+	@echo ... fonctions_generer_masque.i
+	@echo ... fonctions_generer_masque.s
 	@echo ... fonctions_main.obj
 	@echo ... fonctions_main.i
 	@echo ... fonctions_main.s

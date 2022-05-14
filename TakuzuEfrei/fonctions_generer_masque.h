@@ -5,8 +5,8 @@
 #ifndef TAKUZUEFREI_FONCTIONS_GENERER_MASQUE_H
 #define TAKUZUEFREI_FONCTIONS_GENERER_MASQUE_H
 
-void generer_masque4(int matrice[4][4]);
-void affichermatrice(int matrice[4][4]);
+int** generer_masque(int **matrice);
+void affichermatrice(int **matrice);
 
 
 #endif //TAKUZUEFREI_FONCTIONS_GENERER_MASQUE_H

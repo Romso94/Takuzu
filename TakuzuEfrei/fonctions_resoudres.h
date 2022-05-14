@@ -12,14 +12,18 @@ void resoudre();
 
 int taille();
 
+int ** solution(int** m2d,int* m1,int* m2,int *m3,int *m4,int taille);
 
-void solution(int m2d[4][4],int* m1,int* m2,int *m3,int *m4,int taille);
+void Jouer4(int **matrice_joueur,int **matrice_masque,int **matrice_solution);
 
-void Jouer(int matrice_joueur[4][4],int matrice_masque[4][4],int matrice_solution[4][4]);
+int** fill_matrice_joueur(int **matrice,int** masque,int** solution );
 
-void fill_matrice_joueur4(int matrice[4][4],int masque[4][4],int solution[4][4] );
+int fill_(int** matrice);
 
-int fill_(int matrice[4][4]);
+void afficher_grille(int **matrice_masque,int  **matrice_solution,int taille);
 
+int sommeligne(int ** matrice,int taille,int ligne);
+
+int sommecolonne(int **matrice,int taille,int colonne);
 
 #endif //TAKUZUEFREI_FONCTIONS_RESOUDRES_H
