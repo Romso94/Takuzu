@@ -25,8 +25,8 @@ void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
         }
 
     }
-
     decimal_to_binaire(t1,t[0]);
+
 
     decimal_to_binaire(t2,t[1]);
 
