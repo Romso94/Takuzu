@@ -36,12 +36,7 @@ void decimal_to_binaire(int *T, int val){
         T[i] = val%2;
 
         val = val/2;
-    /*
-        printf("\n");
-        printf("T[i] = %d\t",T[i]);
-        printf("\n");
-        printf("val = %d\t",val);
-    */
+
         i++;
     }
 

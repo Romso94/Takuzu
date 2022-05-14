@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/Romai/Desktop/Takuzu/TakuzuL1/TakuzuEfrei/cmake-build-debug"
+			"value" : "c:/Users/Romai/Desktop/TakuzuL1/TakuzuEfrei/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -479,7 +479,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/Romai/Desktop/Takuzu/TakuzuL1/TakuzuEfrei"
+			"value" : "C:/Users/Romai/Desktop/TakuzuL1/TakuzuEfrei"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1095,7 +1095,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Romai/Desktop/Takuzu/TakuzuL1/TakuzuEfrei/cmake-build-debug"
+			"value" : "C:/Users/Romai/Desktop/TakuzuL1/TakuzuEfrei/cmake-build-debug"
 		},
 		{
 			"name" : "TakuzuEfrei_IS_TOP_LEVEL",
@@ -1119,7 +1119,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/Romai/Desktop/Takuzu/TakuzuL1/TakuzuEfrei"
+			"value" : "C:/Users/Romai/Desktop/TakuzuL1/TakuzuEfrei"
 		}
 	],
 	"kind" : "cache",
