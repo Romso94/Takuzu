@@ -71,3 +71,21 @@ void inverserTableau(int*T,int taille){
         T[j]=temp;
     }
 }
+
+void decimal_to_binaire8(int *T,int val) {
+
+
+    int i = 0;
+    while (val != 0) {
+        T[i] = val % 2;
+
+        val = val / 2;
+
+        i++;
+    }
+    for (i; i < 8; i++) {
+        T[i] = 0;
+    }
+
+    inverserTableau(T, 8);
+}

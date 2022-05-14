@@ -9,11 +9,11 @@
 
 
 
-int** generer_masque(int** matrice){
+int** generer_masque(int** matrice,int taille){
 
     srand(time(NULL));
     int j=0,x;
-    for(int a=0;a<4;a++){
+    for(int a=0;a<taille;a++){
         for (int b=0; b<4;b++){
             x = rand() % 14 + 1;
 

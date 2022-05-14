@@ -38,6 +38,44 @@ void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
 
 }
 
+void nbr_ale_8x(int*t1,int*t2,int*t3,int*t4,int*t5,int*t6,int*t7,int*t8) {
+    srand(time(NULL));
+    int j=0;
+    int t[8],nbr_a_choisir[34] = {43,45,51,53,54,75,77,83,85,86,89,90,101,102,105,106,108,147,149,150,153,154,165,166,169,170,172,178,180,201,202,204,210,212,} ;
+    while (j<8){
+
+        int x = rand() %34 ;
+        //printf("nombre aleatoire : %d\n",x);
+        int val = nbr_a_choisir[x];
+        int present = verife(val,t,j);
+        if (present==0){
+            t[j]=val;
+            j++;
+        }
+
+    }
+
+    decimal_to_binaire8(t1,t[0]);
+
+    decimal_to_binaire8(t2,t[1]);
+
+    decimal_to_binaire8(t3,t[2]);
+
+    decimal_to_binaire8(t4,t[3]);
+
+    decimal_to_binaire8(t5, t[4]);
+
+    decimal_to_binaire8(t6,t[5]);
+
+    decimal_to_binaire8(t7,t[6]);
+
+    decimal_to_binaire8(t8,t[7]);
+
+
+
+
+}
+
 void lire_tableau(int* tableau,int taille){
     for(int i=0 ;i<taille;i++)
     {
@@ -61,12 +99,24 @@ int verife(int val, int *T,int taille_liste){
 }
 
 
-int verif_colonne(int *T1,int *T2,int *T3,int *T4,int taille){
+int verif_colonne4(int *T1,int *T2,int *T3,int *T4,int taille){
 
     for(int i=0;i<taille;i++){
         int somme = 0;
         somme += T1[i] + T2[i] + T3[i] + T4[i];
         if (somme!=2){
+            return 1;
+        }
+    }
+    return 0;
+
+}
+
+int verif_colonne8(int *T1,int *T2,int *T3,int *T4,int *T5,int * T6,int *T7,int *T8, int taille){
+    for(int i=0;i<taille;i++){
+        int somme = 0;
+        somme += T1[i] + T2[i] + T3[i] + T4[i]+ T5[i] + T6[i] + T7[i] + T8[i];
+        if (somme!=4){
             return 1;
         }
     }
