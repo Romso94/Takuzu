@@ -144,7 +144,8 @@ void Jouer(int **joueur,int**masque,int**solution,int taille){
                 }
             }
 
-        printf("\n");
-        printf("Grille rempli !");
+
     }
+    printf("\n");
+    printf("Grille rempli !");
 }
