@@ -1,5 +1,5 @@
-//
-// Created by Flo on 06/04/2022.
+//Takuzu Projet C : Florian Poscente / Gas Romain
+// Ce fichier permets à l'utilisateur de résoudre une matrice
 //
 
 #ifndef MAIN_C_FONCTION_GENERER_SOLUTION_H

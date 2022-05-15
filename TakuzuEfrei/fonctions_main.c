@@ -1,5 +1,6 @@
+// Takuzu Projet C : Florian Poscente / Gas Romain
+// Ce fichier permets d'afficher les regles et générer les matrices 2D
 //
-// Created by Romai on 01/04/2022.
 //
 
 #include "fonctions_main.h"
@@ -8,8 +9,8 @@
 #include <unistd.h>
 
 void choix_joueur(){
-
-    /* Mettre sleep(2); */
+    // Permets d'afficher le menu de départ
+    sleep(2);
     printf("Pour acc%cder aux r%cgles entrez : regles \n",130,138);
 
 
@@ -27,7 +28,7 @@ void choix_joueur(){
 
 
 
-void regles(){
+void regles(){          //Affiche les regles
     printf("R%cgles num%cros 1 : Dans une ligne, il doit y avoir autant de 0 que de 1            \n",138,130);
     printf("R%cgles num%cros 2 : Dans une colonne, il doit y avoir autant de 0 que de 1          \n",138,130);
     printf("R%cgles num%cros 3 : Il ne peut pas y avoir deux lignes identiques dans une grille   \n",138,130);
@@ -37,7 +38,7 @@ void regles(){
 }
 
 
-int** generer_matrice(int taille, int** Matrice){
+int** generer_matrice(int taille, int** Matrice){           //Permets d'initialiser un tableau 2D avec des 0
     int i =0;
     Matrice = (int**) malloc(taille * sizeof(int*));
     for(i;i<taille;i++){
@@ -46,7 +47,7 @@ int** generer_matrice(int taille, int** Matrice){
     return Matrice;
 }
 
-int** generer_matrice1(int taille, int** Matrice){
+int** generer_matrice1(int taille, int** Matrice){          //Permets d'initialiser un tableau 2D avec des 1
     int i =0;
     Matrice = (int**) malloc(taille * sizeof(int*));
     for(i;i<taille;i++){

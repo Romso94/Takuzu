@@ -1,17 +1,17 @@
+// Takuzu Projet C : Florian Poscente / Gas Romain
+// Ce fichier permets à l'utilisateur de résoudre une matrice
 //
-// Created by Romai on 01/04/2022.
 //
 #include <unistd.h>
 #include "fonctions_resoudres.h"
 #include "fonction_generer_solution.h"
 #include "fonctions_generer_masque.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include "fonctions_main.h"
 
 
-void resoudre() {
-    int choix, masque, masque_manu;
+void resoudre() {   // appele quand l'utilisateur veut jouer
+    int  masque, masque_manu;
     int taille_m, verif_colon;
     colonne a;
 
@@ -20,7 +20,7 @@ void resoudre() {
     printf("Pour commencer veuillez choisir la taille de la matrice :  \n");
 
 
-    taille_m = taille();
+    taille_m = taille();            // Récupère la taille voulut
 
 
     do {
@@ -45,17 +45,17 @@ void resoudre() {
 
 
         do {
-            nbr_ale_4x(ligne_1, ligne_2, ligne_3, ligne_4);
-            verif_colon = verif_colonne4(ligne_1, ligne_2, ligne_3, ligne_4, 4);
+            nbr_ale_4x(ligne_1, ligne_2, ligne_3, ligne_4);     // La fonction nbr_ale_4x permets de récupérer 4 valeurs binaires dans 4 tableaux
+            verif_colon = verif_colonne4(ligne_1, ligne_2, ligne_3, ligne_4, 4);  // Verification des colonnes avec leurs sommes qui ne doivent pas dépasser 2
 
         } while (verif_colon == 1);
 
 
 
         if (masque == 2) {
-            masque_m = generer_masque(masque_m,4);
+            masque_m = generer_masque(masque_m,4);  //Permets de générer un masque aléatoirement
 
-        } else {
+        } else {        // remplir le masque manuellement
             printf("\n");
             printf("\n");
             printf("Vous allez remplir vous meme le masque  \n");
@@ -65,7 +65,7 @@ void resoudre() {
                     do {
                         printf("\n");
                         a = j;
-                        printf("Choix 1 ou 0 pour la case [%d]", i + 1);
+                        printf("Entrez 1 pour afficher la case ou 0 pour ne pas l'afficher : CASE [%d]", i + 1);
                         switch (a) {
 
                             case A: {
@@ -104,18 +104,18 @@ void resoudre() {
         }
 
 
-        m_solution = solution4(m_solution, ligne_1, ligne_2, ligne_3, ligne_4, 4);
+        m_solution = solution4(m_solution, ligne_1, ligne_2, ligne_3, ligne_4, 4); // Rassemble les 4 tableaux dans une seule matrice
 
-        /* Forme matrice 4X4 */
+
 
 
         afficher_grille( masque_m,m_solution,4);
 
 
 
-        jouer = fill_matrice_joueur(jouer, masque_m, m_solution,4);
+        jouer = fill_matrice_joueur(jouer, masque_m, m_solution,4);   // Rempli la matrice jouer de -1 pour les valeurs non affiche par le masque
 
-        Jouer4(jouer,masque_m,m_solution);
+        Jouer4(jouer,masque_m,m_solution); //Permets de jouer avec une 4x4
 
 
 
@@ -139,20 +139,21 @@ void resoudre() {
         printf("\n");
 
         printf("Chargement de la Matrice ...");
-        /*
+        /*  ENLEVER LES COMMENTAIRE DU DO{}WHILE(); et du //m_solution=solution8... et mettre [ m_solution = matrice8x8(m_solution);  ] en commentaire pour générer en auto une matrice 8x8
         do {
-            nbr_ale_8x(ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8);
-            verif_colon = verif_colonne8(ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8);
+            nbr_ale_8x(ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8);  // La fonction nbr_ale_8x permets de récupérer 8 valeurs binaires dans 8 tableaux
+
+            verif_colon = verif_colonne8(ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8); // Verification des colonnes avec leurs sommes qui ne doivent pas dépasser 4
 
 
 
         } while (verif_colon == 1);
         */
 
-        m_solution = matrice8x8(m_solution);
+        m_solution = matrice8x8(m_solution); // A METTRE EN COMMENTAIRE POUR GENERER EN AUTO // Permets de remplir la matrice m_solution avec une grille deja rempli
 
         if (masque == 2) {
-            masque_m = generer_masque(masque_m,8);
+            masque_m = generer_masque(masque_m,8);      // Permets de générer un masque
         } else {
             printf("\n");
             printf("\n");
@@ -217,13 +218,13 @@ void resoudre() {
 
             }
         }
-     //   m_solution = solution8(m_solution, ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8);
+     //   m_solution = solution8(m_solution, ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8);   // ENLEVER LE COMMENTAIRE POUR GENERER LA 8x8 en auto
 
         afficher_grille( masque_m,m_solution,8);
 
-        jouer = fill_matrice_joueur(jouer, masque_m, m_solution,8);
+        jouer = fill_matrice_joueur(jouer, masque_m, m_solution,8);    // Rempli la matrice jouer de -1 pour les valeurs non affiche par le masque
 
-        Jouer8(jouer,masque_m,m_solution);
+        Jouer8(jouer,masque_m,m_solution);  //Permets de jouer avec une 8x8
 
 
     }
@@ -233,7 +234,7 @@ void resoudre() {
 }
 
 
-int taille(){
+int taille(){ //Peremets de récupérer la taille choisit par l'utilisateur
     /* Variables */
     int tailles;
 
@@ -263,7 +264,7 @@ int taille(){
 }
 
 
-int ** solution4(int** m2d,int* m1,int *m2,int* m3,int* m4,int taille) {
+int ** solution4(int** m2d,int* m1,int *m2,int* m3,int* m4,int taille) {    // Permets de convertir les 4 tableaux de nombres binaires en 1 matrice
     int j = 0, i = 0;
 
     for (j; j < taille; j++) {
@@ -281,7 +282,7 @@ int ** solution4(int** m2d,int* m1,int *m2,int* m3,int* m4,int taille) {
 }
 
 
-int **solution8(int** m2d,int* m1,int* m2,int *m3,int *m4,int *m5,int *m6 ,int * m7,int*m8,int taille){
+int **solution8(int** m2d,int* m1,int* m2,int *m3,int *m4,int *m5,int *m6 ,int * m7,int*m8,int taille){ // Permets de convertir les 8 tableaux de nombres binaires en 1 matrice
     int j = 0, i = 0;
 
     for (j; j < taille; j++) {
@@ -321,7 +322,7 @@ int **solution8(int** m2d,int* m1,int* m2,int *m3,int *m4,int *m5,int *m6 ,int *
 
 
 
-int ** fill_matrice_joueur(int **matrice,int** masque,int** solution ,int taille){
+int ** fill_matrice_joueur(int **matrice,int** masque,int** solution ,int taille){ //Permets de remplir la matrice joueur en fonction du masque
 
     for (int i =0;i<taille;i++){
 
@@ -338,7 +339,7 @@ int ** fill_matrice_joueur(int **matrice,int** masque,int** solution ,int taille
     return matrice;
 }
 
-int fill_(int **matrice,int taille){
+int fill_(int **matrice,int taille){ // Parcours la matrice afin de savoir s'il reste des -1 (si elle n'est pas remplis)
     for (int i =0;i<taille;i++){
         for (int j=0;j<taille;j++){
             if (matrice[i][j]==-1){
@@ -350,7 +351,7 @@ int fill_(int **matrice,int taille){
 }
 
 
-void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
+void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) { //Permets de jouer sur une matrice 4x4
     int run = 1, ligne, colonne_val, remplis_case, mat_rempli,hp=3,sum,col;
     char colonne_entry;
 
@@ -394,7 +395,7 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         printf("\n");
 
 
-        if (matrice_joueur[ligne][colonne_val] != -1) {
+        if (matrice_joueur[ligne][colonne_val] != -1) { //  Vérifie si la case a été joué ou est deja rempli
             printf("\n");
             printf("La case est deja rempli !!! \n");
             printf("\n");
@@ -410,7 +411,7 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                 printf("\n");
             } while (remplis_case > 1 || remplis_case < 0);
 
-            if (matrice_solution[ligne][colonne_val] == remplis_case) {
+            if (matrice_solution[ligne][colonne_val] == remplis_case) { // Vérifie si le coup est valide et solution
                 printf("\n");
                 printf("Coup Valide, Bien jou%c\n", 130);
                 sleep(2);
@@ -418,10 +419,10 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                 matrice_masque[ligne][colonne_val] = remplis_case;
 
             } else{
-                matrice_joueur[ligne][colonne_val] = remplis_case;
+                matrice_joueur[ligne][colonne_val] = remplis_case;      // Vérifie si le coup peut être valide ou non
                 sum = sommeligne(matrice_joueur,4,ligne,4);
                 col = sommecolonne(matrice_joueur,4,colonne_val,4);
-                if (sum>2|| col>2){
+                if (sum>2|| col>2){ // Vérifie si le coup est invalide et enlève
                     printf("\n");
                     printf("Coup Invalide, vous perdez une vie\n");
                     hp -=1;
@@ -439,7 +440,7 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                     printf("Il vous reste %d vie\n", hp);
                     sleep(2);
 
-                } else{
+                } else{ // Lorsque le coup est valide, mais pas solution
                     printf("\n");
                     printf("Coup Valide, Malheureusement ce n'est pas la solution\n");
                     printf("Vous ne perdez pas de Vie\n");
@@ -452,18 +453,18 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         }
 
 
-        mat_rempli = fill_(matrice_joueur,4);
+        mat_rempli = fill_(matrice_joueur,4); // Vérifie si la matrice ne contient plus de -1
 
-        if (mat_rempli == 0 ) {
+        if (mat_rempli == 0 ) {// Arrete le while pour finir le programme
             run = 0;
             printf("\n");
             printf("Bravo Vous avez GAGNE !!!!!!!\n");
             sleep(3);
 
-        } else if (hp==0){
+        } else if (hp==0){ // Arrete le while pour finir le programme
             run = 0;
             printf("\n");
-            printf("Vous avez perdu ! Dommage ! R%cessayer en relancent le programme !\n",130);
+            printf("Vous avez perdu ! Dommage ! R%cessayer en relancant le programme !\n",130);
             sleep(3);
             break;
             // Afficher la solution
@@ -476,9 +477,9 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
 }
 
 
-void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
+void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){//Permets d'afficher la matrice
 
-    if (taille==4){
+    if (taille==4){ // Matrice 4x4
     printf("\n");
     printf("_______________________________\n");
 
@@ -490,7 +491,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
 
     printf("|  1  |");
 
-
+    // Affiche la valeur de la solution si le masque contient 0 ou en 1 sur la position [i][j]
     if (matrice_masque[0][0]>=0) {
         printf("  %d  |", matrice_solution[0][0]);
     } else{
@@ -610,7 +611,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
 
         printf("|_____|_____|_____|_____|_____|\n");
     }
-    else if (taille==8){
+    else if (taille==8){ // Matrice 8x8
         printf("\n");
 
         printf("_______________________________________________________\n");
@@ -1061,7 +1062,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
 }
 
 
-int sommeligne(int ** matrice,int taille,int ligne,int taille_m){
+int sommeligne(int ** matrice,int taille,int ligne,int taille_m){// Calcul la somme de la ligne d'une matrice pour verifier si le coup est valide
     int somme=0,zero=0;
         for (int i=0;i<taille;i++){
             if (matrice[ligne][i]!=-1) {
@@ -1077,7 +1078,7 @@ int sommeligne(int ** matrice,int taille,int ligne,int taille_m){
     return somme;
 }
 
-int sommecolonne(int **matrice,int taille,int colonne,int taille_m){
+int sommecolonne(int **matrice,int taille,int colonne,int taille_m){ // Calcul la somme de la colonne d'une matrice pour verifier si le coup est valide
     int somme=0,zero=0;
     for (int i=0;i<taille;i++){
         if (matrice[i][colonne]!=-1){
@@ -1094,7 +1095,7 @@ int sommecolonne(int **matrice,int taille,int colonne,int taille_m){
     return somme;
 }
 
-void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
+void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {//Permets de jouer sur une 8x8
     int run = 1, ligne, colonne_val, remplis_case, mat_rempli,hp=3,sum,col;
     char colonne_entry;
 
@@ -1146,7 +1147,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         printf("\n");
 
 
-        if (matrice_joueur[ligne][colonne_val] != -1) {
+        if (matrice_joueur[ligne][colonne_val] != -1) { // Vérifie que la case n'est pas rempli (si ==-1 -> Pas rempli)
             printf("\n");
             printf("La case est deja rempli !!! \n");
             printf("\n");
@@ -1162,7 +1163,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                 printf("\n");
             } while (remplis_case > 1 || remplis_case < 0);
 
-            if (matrice_solution[ligne][colonne_val] == remplis_case) {
+            if (matrice_solution[ligne][colonne_val] == remplis_case) {//Coup Valide
                 printf("\n");
                 printf("Coup Valide, Bien jou%c\n", 130);
                 sleep(2);
@@ -1173,7 +1174,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                 matrice_joueur[ligne][colonne_val] = remplis_case;
                 sum = sommeligne(matrice_joueur,8,ligne,8);
                 col = sommecolonne(matrice_joueur,8,colonne_val,8);
-                if (sum>4 || col>4){
+                if (sum>4 || col>4){ // Coup invalide perte de vie
                     printf("\n");
                     printf("Coup Invalide, vous perdez une vie\n");
                     hp -=1;
@@ -1191,7 +1192,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                     printf("Il vous reste %d vie\n", hp);
                     sleep(2);
 
-                } else{
+                } else{ // Coup valide, mais pas solution
                     printf("\n");
                     printf("Coup Valide, Malheureusement ce n'est pas la solution\n");
                     printf("Vous ne perdez pas de Vie\n");
@@ -1204,15 +1205,15 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         }
 
 
-        mat_rempli = fill_(matrice_joueur,8);
+        mat_rempli = fill_(matrice_joueur,8); // Vérifie si la matrice est remplie (ne contient aucun -1)
 
-        if (mat_rempli == 0 ) {
+        if (mat_rempli == 0 ) {// Fin Gagnant
             run = 0;
             printf("\n");
             printf("Bravo Vous avez GAGNE !!!!!!!\n");
             sleep(3);
 
-        } else if (hp==0){
+        } else if (hp==0){ // Fin Perdu
             run = 0;
             printf("\n");
             printf("Vous avez perdu ! Dommage ! R%cessayer en relancent le programme !\n",130);
@@ -1228,7 +1229,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
 }
 
 
-int **matrice8x8(int **m_solution){
+int **matrice8x8(int **m_solution){ //Matrice SOLUTION 8x8
 
 
     m_solution[0][0]=1;

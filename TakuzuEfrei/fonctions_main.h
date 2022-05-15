@@ -1,5 +1,6 @@
+//Takuzu Projet C : Florian Poscente / Gas Romain
+// Ce fichier permets d'afficher les regles et générer les matrices 2D
 //
-// Created by Romai on 01/04/2022.
 //
 
 #ifndef TAKUZUEFREI_FONCTIONS_MAIN_H

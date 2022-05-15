@@ -1,18 +1,18 @@
-//
-// Created by Romai on 08/05/2022.
+//Takuzu Projet C : Florian Poscente / Gas Romain
+//      Ce fichier permet de générer un masque pour les grilles solutions
 //
 
 #include "fonctions_generer_masque.h"
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
 
 
 
-int** generer_masque(int** matrice,int taille){
+
+int** generer_masque(int** matrice,int taille){ // Permets de générer un masque pour une grille / Le nombre de cases affiché est aléatoire
 
     srand(time(NULL));
-    int j=0,x;
+    int x;
     for(int a=0;a<taille;a++){
         for (int b=0; b<taille;b++){
             x = rand() % 14 + 1;
@@ -34,16 +34,3 @@ int** generer_masque(int** matrice,int taille){
 
 
 
-void affichermatrice(int** matrice){
-
-    for(int i=0;i<4;i++){
-
-        for(int j=0;j<4;j++){
-
-            printf("Valeur en [%d][%d] : %d \n",i,j,matrice[i][j]);
-
-        }
-
-    }
-
-}

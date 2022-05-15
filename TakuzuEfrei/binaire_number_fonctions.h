@@ -1,5 +1,6 @@
-//
-// Created by Romai on 04/04/2022.
+//   Takuzu Projet C : Florian Poscente / Gas Romain
+//  Ce fichier permets de générer les matrices en convertissant des valeurs en binaire //
+
 //
 
 #ifndef TAKUZU_BINAIRE_NUMBER_FONCTIONS_H

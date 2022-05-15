@@ -1,9 +1,13 @@
+// Takuzu Projet C : Florian Poscente / Gas Romain
+//  Ce fichier permets de lancer les différentes fonctionnalités proposé à l'utilisateur
+
+
 #include <stdio.h>
 #include <unistd.h>
 #include "fonctions_main.h"
 #include "fonctions_resoudres.h"
 #include <string.h>
-#include "fonction_generer_solution.h"
+
 #include "generer.h"
 #include "auto.h"
 
@@ -38,7 +42,7 @@ int main() {
 
         resoudre();
 
-    } else if (strcmp(choix,"auto")==0){                /* Partie où l'ordinateur  résout  la grille de Takuzu */
+    } else if (strcmp(choix,"auto")==0){                /* Partie où l'ordinateur résout la grille de Takuzu */
         int taille;
         printf("\n");
         printf("Auto");

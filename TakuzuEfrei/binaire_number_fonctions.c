@@ -1,12 +1,12 @@
-//
-// Created by Romai on 04/04/2022.
+//   Takuzu Projet C : Florian Poscente / Gas Romain
+//  Ce fichier permets de générer les matrices en convertissant des valeurs en binaire
 //
 #include <stdio.h>
 #include "binaire_number_fonctions.h"
 
 
-/*  Remplir le tableau binaire en inversant car fonction lit de gauche a droite */
-int puissance(int b, int e)
+
+int puissance(int b, int e)                     // Calcul de b à la puissance e
 {
     if (e==0) {
         return 1;
@@ -17,7 +17,8 @@ int puissance(int b, int e)
     }
 }
 
-int binaire_to_decimal(int *tab, int indice) {
+int binaire_to_decimal(int *tab, int indice) {      //Convertit un nombre binaire en un nombre décimal
+    /*  Remplir le tableau binaire en inversant, car la fonction lit de gauche à droite */
     int*p = tab;
     if (indice == -1) {
         return 0;
@@ -30,7 +31,7 @@ int binaire_to_decimal(int *tab, int indice) {
     }
 }
 
-void decimal_to_binaire(int *T, int val){
+void decimal_to_binaire(int *T, int val){   // Convertit un nombre décimal en binaire
     int i=0;
     while (val!=0){
         T[i] = val%2;
@@ -63,7 +64,7 @@ void decimal_to_binaire(int *T, int val){
 
 }
 
-void inverserTableau(int*T,int taille){
+void inverserTableau(int*T,int taille){ // Inverse un tableau donné
     int i,j,temp;
     for (i=0,j=taille-1;i<j;i++,j--){
         temp = T[i];
@@ -72,7 +73,7 @@ void inverserTableau(int*T,int taille){
     }
 }
 
-void decimal_to_binaire8(int *T,int val) {
+void decimal_to_binaire8(int *T,int val) { //Permets de convertir un nombre décimal en binaire sur 8 cases
 
 
     int i = 0;

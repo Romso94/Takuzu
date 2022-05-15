@@ -1,5 +1,5 @@
-//
-// Created by Romai on 15/05/2022.
+//  Takuzu Projet C : Florian Poscente / Gas Romain
+//  Ce fichier est utilisé lorsque l'utilisateur choisit l'option auto(); L'ordinateur résout tout seul
 //
 
 #ifndef TAKUZUEFREI_AUTO_H

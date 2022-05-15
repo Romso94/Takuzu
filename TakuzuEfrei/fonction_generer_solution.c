@@ -1,5 +1,6 @@
+//Takuzu Projet C : Florian Poscente / Gas Romain
+//  Ce fichier permets de générer les matrices solutions
 //
-// Created by Flo on 06/04/2022.
 //
 #include "fonction_generer_solution.h"
 #include "binaire_number_fonctions.h"
@@ -7,9 +8,9 @@
 #include <time.h>
 #include <stdlib.h>
 
-#include <stdbool.h>
 
-void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
+
+void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){ // Permets de remplir 4 tableaux avec des nombres binaires sur 4 cases
     srand(time(NULL));
     int j=0;
     int t[4],nbr_a_choisir[6] = {3,5,6,9,10,12} ;
@@ -38,7 +39,7 @@ void nbr_ale_4x(int*t1,int*t2,int*t3,int*t4){
 
 }
 
-void nbr_ale_8x(int*t1,int*t2,int*t3,int*t4,int*t5,int*t6,int*t7,int*t8) {
+void nbr_ale_8x(int*t1,int*t2,int*t3,int*t4,int*t5,int*t6,int*t7,int*t8) { // Permets de remplir _ tableaux avec des nombres binaires sur 8 cases
     srand(time(NULL));
     int j=0;
     int t[8],nbr_a_choisir[34] = {43,45,51,53,54,75,77,83,85,86,89,90,101,102,105,106,108,147,149,150,153,154,165,166,169,170,172,178,180,201,202,204,210,212,} ;
@@ -76,7 +77,7 @@ void nbr_ale_8x(int*t1,int*t2,int*t3,int*t4,int*t5,int*t6,int*t7,int*t8) {
 
 }
 
-void lire_tableau(int* tableau,int taille){
+void lire_tableau(int* tableau,int taille){  // Permets de lire le tableau
     for(int i=0 ;i<taille;i++)
     {
         printf("%d\t",tableau[i]);
@@ -84,7 +85,7 @@ void lire_tableau(int* tableau,int taille){
     }
 }
 
-int verife(int val, int *T,int taille_liste){
+int verife(int val, int *T,int taille_liste){ // Permets de vérifier si une valeur est présente dans un tableau
 
     for(int i=0 ;i<taille_liste;i++)
     {
@@ -99,7 +100,7 @@ int verife(int val, int *T,int taille_liste){
 }
 
 
-int verif_colonne4(int *T1,int *T2,int *T3,int *T4,int taille){
+int verif_colonne4(int *T1,int *T2,int *T3,int *T4,int taille){ // Verifie si la somme des elements dans la colonne est différente de 2
 
     for(int i=0;i<taille;i++){
         int somme = 0;
@@ -112,7 +113,7 @@ int verif_colonne4(int *T1,int *T2,int *T3,int *T4,int taille){
 
 }
 
-int verif_colonne8(int *T1,int *T2,int *T3,int *T4,int *T5,int * T6,int *T7,int *T8, int taille){
+int verif_colonne8(int *T1,int *T2,int *T3,int *T4,int *T5,int * T6,int *T7,int *T8, int taille){ // Verifie si la somme des elements dans la colonne est différente de 4
     for(int i=0;i<taille;i++){
         int somme = 0;
         somme += T1[i] + T2[i] + T3[i] + T4[i]+ T5[i] + T6[i] + T7[i] + T8[i];
