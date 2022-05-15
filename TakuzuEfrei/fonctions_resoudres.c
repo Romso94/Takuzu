@@ -92,7 +92,7 @@ void resoudre() {
                         }
 
                         scanf("%d", &masque_manu);
-                        if (masque_m[i][j]==0){
+                        if (masque_manu==0){
                             masque_m[i][j] =-1;
                         } else{
                             masque_m[i][j] = masque_manu;}
@@ -207,7 +207,7 @@ void resoudre() {
                         }
 
                         scanf("%d", &masque_manu);
-                        if (masque_m[i][j]==0){
+                        if (masque_manu==0){
                             masque_m[i][j] =-1;
                         } else{
                         masque_m[i][j] = masque_manu;}
