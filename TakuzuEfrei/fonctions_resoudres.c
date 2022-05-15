@@ -338,9 +338,9 @@ int ** fill_matrice_joueur(int **matrice,int** masque,int** solution ,int taille
     return matrice;
 }
 
-int fill_(int **matrice){
-    for (int i =0;i<4;i++){
-        for (int j=0;j<4;j++){
+int fill_(int **matrice,int taille){
+    for (int i =0;i<taille;i++){
+        for (int j=0;j<taille;j++){
             if (matrice[i][j]==-1){
                 return 1;
             }
@@ -405,7 +405,7 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
 
             do {
                 printf("\n");
-                printf("Remplir la case [%d][%c] avec un 1 ou 0 :", ligne, colonne_entry);
+                printf("Remplir la case [%d][%c] avec un 1 ou 0 :", ligne+1, colonne_entry);
                 scanf("%d", &remplis_case);
                 printf("\n");
             } while (remplis_case > 1 || remplis_case < 0);
@@ -452,7 +452,7 @@ void Jouer4(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         }
 
 
-        mat_rempli = fill_(matrice_joueur);
+        mat_rempli = fill_(matrice_joueur,4);
 
         if (mat_rempli == 0 ) {
             run = 0;
@@ -491,7 +491,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
     printf("|  1  |");
 
 
-    if (matrice_masque[0][0]>=1) {
+    if (matrice_masque[0][0]>=0) {
         printf("  %d  |", matrice_solution[0][0]);
     } else{
         printf("     |");
@@ -618,7 +618,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  1  |");
         // PREMIERE LIGNE
-        if (matrice_masque[0][0]>=1) {
+        if (matrice_masque[0][0]>=0) {
             printf("  %d  |", matrice_solution[0][0]);
         } else{
             printf("     |");
@@ -643,7 +643,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[0][4]>=1) {
+        if (matrice_masque[0][4]>=0) {
             printf("  %d  |", matrice_solution[0][4]);
         } else{
             printf("     |");
@@ -672,7 +672,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  2  |");
 
-        if (matrice_masque[1][0]>=1) {
+        if (matrice_masque[1][0]>=0) {
             printf("  %d  |", matrice_solution[1][0]);
         } else{
             printf("     |");
@@ -697,7 +697,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[1][4]>=1) {
+        if (matrice_masque[1][4]>=0) {
             printf("  %d  |", matrice_solution[1][4]);
         } else{
             printf("     |");
@@ -726,7 +726,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  3  |");
 
-        if (matrice_masque[2][0]>=1) {
+        if (matrice_masque[2][0]>=0) {
             printf("  %d  |", matrice_solution[2][0]);
         } else{
             printf("     |");
@@ -751,7 +751,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[2][4]>=1) {
+        if (matrice_masque[2][4]>=0) {
             printf("  %d  |", matrice_solution[2][4]);
         } else{
             printf("     |");
@@ -781,7 +781,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  4  |");
 
-        if (matrice_masque[3][0]>=1) {
+        if (matrice_masque[3][0]>=0) {
             printf("  %d  |", matrice_solution[3][0]);
         } else{
             printf("     |");
@@ -806,7 +806,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[3][4]>=1) {
+        if (matrice_masque[3][4]>=0) {
             printf("  %d  |", matrice_solution[3][4]);
         } else{
             printf("     |");
@@ -837,7 +837,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  5  |");
 
-        if (matrice_masque[4][0]>=1) {
+        if (matrice_masque[4][0]>=0) {
             printf("  %d  |", matrice_solution[4][0]);
         } else{
             printf("     |");
@@ -862,7 +862,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[4][4]>=1) {
+        if (matrice_masque[4][4]>=0) {
             printf("  %d  |", matrice_solution[4][4]);
         } else{
             printf("     |");
@@ -893,7 +893,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  6  |");
 
-        if (matrice_masque[5][0]>=1) {
+        if (matrice_masque[5][0]>=0) {
             printf("  %d  |", matrice_solution[5][0]);
         } else{
             printf("     |");
@@ -918,7 +918,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[5][4]>=1) {
+        if (matrice_masque[5][4]>=0) {
             printf("  %d  |", matrice_solution[5][4]);
         } else{
             printf("     |");
@@ -948,7 +948,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  7  |");
 
-        if (matrice_masque[6][0]>=1) {
+        if (matrice_masque[6][0]>=0) {
             printf("  %d  |", matrice_solution[6][0]);
         } else{
             printf("     |");
@@ -973,7 +973,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[6][4]>=1) {
+        if (matrice_masque[6][4]>=0) {
             printf("  %d  |", matrice_solution[6][4]);
         } else{
             printf("     |");
@@ -1005,7 +1005,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  8  |");
 
-        if (matrice_masque[7][0]>=1) {
+        if (matrice_masque[7][0]>=0) {
             printf("  %d  |", matrice_solution[7][0]);
         } else{
             printf("     |");
@@ -1030,7 +1030,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[7][4]==1) {
+        if (matrice_masque[7][4]>=0) {
             printf("  %d  |", matrice_solution[7][4]);
         } else{
             printf("     |");
@@ -1173,7 +1173,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
                 matrice_joueur[ligne][colonne_val] = remplis_case;
                 sum = sommeligne(matrice_joueur,8,ligne,8);
                 col = sommecolonne(matrice_joueur,8,colonne_val,8);
-                if (sum>4|| col>4){
+                if (sum>4 || col>4){
                     printf("\n");
                     printf("Coup Invalide, vous perdez une vie\n");
                     hp -=1;
@@ -1204,7 +1204,7 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         }
 
 
-        mat_rempli = fill_(matrice_joueur);
+        mat_rempli = fill_(matrice_joueur,8);
 
         if (mat_rempli == 0 ) {
             run = 0;

@@ -20,7 +20,7 @@ void Jouer4(int **matrice_joueur,int **matrice_masque,int **matrice_solution);
 
 int** fill_matrice_joueur(int **matrice,int** masque,int** solution ,int taille);
 
-int fill_(int** matrice);
+int fill_(int** matrice,int taille);
 
 void afficher_grille(int **matrice_masque,int  **matrice_solution,int taille);
 

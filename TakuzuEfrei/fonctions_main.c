@@ -45,3 +45,16 @@ int** generer_matrice(int taille, int** Matrice){
     }
     return Matrice;
 }
+
+int** generer_matrice1(int taille, int** Matrice){
+    int i =0;
+    Matrice = (int**) malloc(taille * sizeof(int*));
+    for(i;i<taille;i++){
+        *(Matrice+i) = (int*) malloc(taille * sizeof(int));
+        for(int j=0;j<taille;j++){
+            Matrice[i][j] = 1;
+        }
+    }
+
+    return Matrice;
+}
