@@ -91,6 +91,12 @@ build CMakeFiles/TakuzuEfrei.dir/generer.c.obj: C_COMPILER__TakuzuEfrei_Debug C$
   OBJECT_DIR = CMakeFiles\TakuzuEfrei.dir
   OBJECT_FILE_DIR = CMakeFiles\TakuzuEfrei.dir
 
+build CMakeFiles/TakuzuEfrei.dir/auto.c.obj: C_COMPILER__TakuzuEfrei_Debug C$:/Users/Romai/Desktop/TakuzuL1-main/TakuzuEfrei/auto.c || cmake_object_order_depends_target_TakuzuEfrei
+  DEP_FILE = CMakeFiles\TakuzuEfrei.dir\auto.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\TakuzuEfrei.dir
+  OBJECT_FILE_DIR = CMakeFiles\TakuzuEfrei.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target TakuzuEfrei
@@ -99,7 +105,7 @@ build CMakeFiles/TakuzuEfrei.dir/generer.c.obj: C_COMPILER__TakuzuEfrei_Debug C$
 #############################################
 # Link the executable TakuzuEfrei.exe
 
-build TakuzuEfrei.exe: C_EXECUTABLE_LINKER__TakuzuEfrei_Debug CMakeFiles/TakuzuEfrei.dir/main.c.obj CMakeFiles/TakuzuEfrei.dir/fonctions_resoudres.c.obj CMakeFiles/TakuzuEfrei.dir/fonctions_main.c.obj CMakeFiles/TakuzuEfrei.dir/fonction_generer_solution.c.obj CMakeFiles/TakuzuEfrei.dir/binaire_number_fonctions.c.obj CMakeFiles/TakuzuEfrei.dir/fonctions_generer_masque.c.obj CMakeFiles/TakuzuEfrei.dir/generer.c.obj
+build TakuzuEfrei.exe: C_EXECUTABLE_LINKER__TakuzuEfrei_Debug CMakeFiles/TakuzuEfrei.dir/main.c.obj CMakeFiles/TakuzuEfrei.dir/fonctions_resoudres.c.obj CMakeFiles/TakuzuEfrei.dir/fonctions_main.c.obj CMakeFiles/TakuzuEfrei.dir/fonction_generer_solution.c.obj CMakeFiles/TakuzuEfrei.dir/binaire_number_fonctions.c.obj CMakeFiles/TakuzuEfrei.dir/fonctions_generer_masque.c.obj CMakeFiles/TakuzuEfrei.dir/generer.c.obj CMakeFiles/TakuzuEfrei.dir/auto.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\TakuzuEfrei.dir

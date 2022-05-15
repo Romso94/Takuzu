@@ -5,6 +5,8 @@
 #include <string.h>
 #include "fonction_generer_solution.h"
 #include "generer.h"
+#include "auto.h"
+
 
 
 int main() {
@@ -37,9 +39,20 @@ int main() {
         resoudre();
 
     } else if (strcmp(choix,"auto")==0){                /* Partie où l'ordinateur  résout  la grille de Takuzu */
+        int taille;
         printf("\n");
         printf("Auto");
-        /* auto() */
+
+
+
+
+        do {
+            printf("\n");
+            printf("Choisir la taille 4 ou 8 : ");
+            scanf("%d",&taille);
+        } while (taille<4 || taille>4&& taille<8 || taille>8);
+
+        auto_(taille);
 
     } else if (strcmp(choix,"generer")==0){             /* Partie pour générer une grille automatiquement */
         int taille;
