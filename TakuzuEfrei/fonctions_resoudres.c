@@ -139,7 +139,7 @@ void resoudre() {
         printf("\n");
 
         printf("Chargement de la Matrice ...");
-
+        /*
         do {
             nbr_ale_8x(ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8);
             verif_colon = verif_colonne8(ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8);
@@ -147,6 +147,9 @@ void resoudre() {
 
 
         } while (verif_colon == 1);
+        */
+
+        m_solution = matrice8x8(m_solution);
 
         if (masque == 2) {
             masque_m = generer_masque(masque_m,8);
@@ -214,11 +217,13 @@ void resoudre() {
 
             }
         }
-        m_solution = solution8(m_solution, ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8);
+     //   m_solution = solution8(m_solution, ligne_1, ligne_2, ligne_3, ligne_4,ligne_5,ligne_6,ligne_7,ligne_8, 8);
 
         afficher_grille( masque_m,m_solution,8);
 
+        jouer = fill_matrice_joueur(jouer, masque_m, m_solution,8);
 
+        Jouer8(jouer,masque_m,m_solution);
 
 
     }
@@ -486,7 +491,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
     printf("|  1  |");
 
 
-    if (matrice_masque[0][0]==1) {
+    if (matrice_masque[0][0]>=1) {
         printf("  %d  |", matrice_solution[0][0]);
     } else{
         printf("     |");
@@ -613,7 +618,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  1  |");
         // PREMIERE LIGNE
-        if (matrice_masque[0][0]==1) {
+        if (matrice_masque[0][0]>=1) {
             printf("  %d  |", matrice_solution[0][0]);
         } else{
             printf("     |");
@@ -638,7 +643,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[0][4]==1) {
+        if (matrice_masque[0][4]>=1) {
             printf("  %d  |", matrice_solution[0][4]);
         } else{
             printf("     |");
@@ -667,7 +672,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  2  |");
 
-        if (matrice_masque[1][0]==1) {
+        if (matrice_masque[1][0]>=1) {
             printf("  %d  |", matrice_solution[1][0]);
         } else{
             printf("     |");
@@ -692,7 +697,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[1][4]==1) {
+        if (matrice_masque[1][4]>=1) {
             printf("  %d  |", matrice_solution[1][4]);
         } else{
             printf("     |");
@@ -721,8 +726,8 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  3  |");
 
-        if (matrice_masque[2][0]==1) {
-            printf("  %d  |", matrice_solution[1][0]);
+        if (matrice_masque[2][0]>=1) {
+            printf("  %d  |", matrice_solution[2][0]);
         } else{
             printf("     |");
         }
@@ -746,7 +751,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[2][4]==1) {
+        if (matrice_masque[2][4]>=1) {
             printf("  %d  |", matrice_solution[2][4]);
         } else{
             printf("     |");
@@ -776,7 +781,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  4  |");
 
-        if (matrice_masque[3][0]==1) {
+        if (matrice_masque[3][0]>=1) {
             printf("  %d  |", matrice_solution[3][0]);
         } else{
             printf("     |");
@@ -801,7 +806,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[3][4]==1) {
+        if (matrice_masque[3][4]>=1) {
             printf("  %d  |", matrice_solution[3][4]);
         } else{
             printf("     |");
@@ -832,7 +837,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  5  |");
 
-        if (matrice_masque[4][0]==1) {
+        if (matrice_masque[4][0]>=1) {
             printf("  %d  |", matrice_solution[4][0]);
         } else{
             printf("     |");
@@ -857,7 +862,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[4][4]==1) {
+        if (matrice_masque[4][4]>=1) {
             printf("  %d  |", matrice_solution[4][4]);
         } else{
             printf("     |");
@@ -888,7 +893,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  6  |");
 
-        if (matrice_masque[5][0]==1) {
+        if (matrice_masque[5][0]>=1) {
             printf("  %d  |", matrice_solution[5][0]);
         } else{
             printf("     |");
@@ -913,7 +918,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[5][4]==1) {
+        if (matrice_masque[5][4]>=1) {
             printf("  %d  |", matrice_solution[5][4]);
         } else{
             printf("     |");
@@ -943,7 +948,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  7  |");
 
-        if (matrice_masque[6][0]==1) {
+        if (matrice_masque[6][0]>=1) {
             printf("  %d  |", matrice_solution[6][0]);
         } else{
             printf("     |");
@@ -968,7 +973,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
             printf("     |");
         }
 
-        if (matrice_masque[6][4]==1) {
+        if (matrice_masque[6][4]>=1) {
             printf("  %d  |", matrice_solution[6][4]);
         } else{
             printf("     |");
@@ -1000,7 +1005,7 @@ void afficher_grille(int **matrice_masque, int **matrice_solution,int taille){
         printf("|-----|-----|-----|-----|-----|-----|-----|-----|-----|\n");
         printf("|  8  |");
 
-        if (matrice_masque[7][0]==1) {
+        if (matrice_masque[7][0]>=1) {
             printf("  %d  |", matrice_solution[7][0]);
         } else{
             printf("     |");
@@ -1219,5 +1224,86 @@ void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution) {
         afficher_grille(matrice_masque, matrice_solution,8);
 
     }
+
+}
+
+
+int **matrice8x8(int **m_solution){
+
+
+    m_solution[0][0]=1;
+    m_solution[0][1]=0;
+    m_solution[0][2]=1;
+    m_solution[0][3]=1;
+    m_solution[0][4]=0;
+    m_solution[0][5]=1;
+    m_solution[0][6]=0;
+    m_solution[0][7]=0;
+
+    m_solution[1][0]=1;
+    m_solution[1][1]=0;
+    m_solution[1][2]=1;
+    m_solution[1][3]=0;
+    m_solution[1][4]=1;
+    m_solution[1][5]=0;
+    m_solution[1][6]=0;
+    m_solution[1][7]=1;
+
+    m_solution[2][0]=0;
+    m_solution[2][1]=1;
+    m_solution[2][2]=0;
+    m_solution[2][3]=1;
+    m_solution[2][4]=1;
+    m_solution[2][5]=0;
+    m_solution[2][6]=1;
+    m_solution[2][7]=0;
+
+
+    m_solution[3][0]=0;
+    m_solution[3][1]=1;
+    m_solution[3][2]=0;
+    m_solution[3][3]=1;
+    m_solution[3][4]=0;
+    m_solution[3][5]=1;
+    m_solution[3][6]=1;
+    m_solution[3][7]=0;
+
+    m_solution[4][0]=1;
+    m_solution[4][1]=0;
+    m_solution[4][2]=1;
+    m_solution[4][3]=0;
+    m_solution[4][4]=0;
+    m_solution[4][5]=1;
+    m_solution[4][6]=0;
+    m_solution[4][7]=1;
+
+    m_solution[5][0]=0;
+    m_solution[5][1]=1;
+    m_solution[5][2]=0;
+    m_solution[5][3]=0;
+    m_solution[5][4]=1;
+    m_solution[5][5]=0;
+    m_solution[5][6]=1;
+    m_solution[5][7]=1;
+
+    m_solution[6][0]=0;
+    m_solution[6][1]=0;
+    m_solution[6][2]=1;
+    m_solution[6][3]=1;
+    m_solution[6][4]=0;
+    m_solution[6][5]=1;
+    m_solution[6][6]=1;
+    m_solution[6][7]=0;
+
+    m_solution[7][0]=1;
+    m_solution[7][1]=1;
+    m_solution[7][2]=0;
+    m_solution[7][3]=0;
+    m_solution[7][4]=1;
+    m_solution[7][5]=0;
+    m_solution[7][6]=0;
+    m_solution[7][7]=1;
+
+    return (m_solution);
 
 }

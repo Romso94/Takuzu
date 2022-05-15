@@ -14,7 +14,7 @@ int** generer_masque(int** matrice,int taille){
     srand(time(NULL));
     int j=0,x;
     for(int a=0;a<taille;a++){
-        for (int b=0; b<4;b++){
+        for (int b=0; b<taille;b++){
             x = rand() % 14 + 1;
 
             if (x%3==1){
@@ -31,6 +31,8 @@ int** generer_masque(int** matrice,int taille){
     return matrice;
 
 }
+
+
 
 void affichermatrice(int** matrice){
 

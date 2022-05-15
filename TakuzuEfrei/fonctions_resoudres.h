@@ -30,4 +30,6 @@ int sommecolonne(int **matrice,int taille,int colonne,int taille_m);
 
 void Jouer8(int** matrice_joueur,int **matrice_masque,int **matrice_solution);
 
+int **matrice8x8(int **m_solution);
+
 #endif //TAKUZUEFREI_FONCTIONS_RESOUDRES_H
