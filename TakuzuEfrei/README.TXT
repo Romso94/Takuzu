@@ -25,7 +25,7 @@ Si l'on rentre 2 dans la console, un masque va se générer automatiquement et n
 
 
 
-/!\ POUR GENERER AUTOMATIQUEMENT UNE GRILLE 8x8  Etapes a suivre :
+/!\ POUR GENERER AUTOMATIQUEMENT UNE GRILLE 8x8  Etapes a suivre /!\:
 
 -Mettre en commentaire la ligne 153 du fichier fonctions_resoudre.c
 -Enlever les commentaires de la lignes : 143 à 151 et la ligne 221
