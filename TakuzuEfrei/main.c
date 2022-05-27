@@ -1,4 +1,4 @@
-// Takuzu Projet C : Florian Poscente / Gas Romain
+// Takuzu Projet C 
 //  Ce fichier permets de lancer les différentes fonctionnalités proposé à l'utilisateur
 
 
