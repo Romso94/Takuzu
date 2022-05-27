@@ -1,4 +1,4 @@
-//Takuzu Projet C : Florian Poscente / Gas Romain
+//Takuzu Projet C 
 //  Ce fichier permets de générer une matrice solution 4x4 ou 8x8 et l'afficher
 //
 
