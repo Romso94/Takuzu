@@ -1,4 +1,4 @@
-//Takuzu Projet C : Florian Poscente / Gas Romain
+//Takuzu Projet C 
 //  Ce fichier est utilisé lorsque l'utilisateur choisit l'option auto(); L'ordinateur résout tout seul
 //
 #include <unistd.h>
