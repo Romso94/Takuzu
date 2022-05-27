@@ -1,5 +1,5 @@
-Poscente Florian  / Gas Romain 
-On clique sur Run.
+
+Run
 
 Un menu s'affiche avec 4 choix possibles.
 
