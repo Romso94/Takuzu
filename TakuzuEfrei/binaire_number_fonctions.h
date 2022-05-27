@@ -1,4 +1,4 @@
-//   Takuzu Projet C : Florian Poscente / Gas Romain
+//   Takuzu Projet C 
 //  Ce fichier permets de générer les matrices en convertissant des valeurs en binaire //
 
 //
