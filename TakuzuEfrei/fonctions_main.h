@@ -1,4 +1,4 @@
-//Takuzu Projet C : Florian Poscente / Gas Romain
+//Takuzu Projet C 
 // Ce fichier permets d'afficher les regles et générer les matrices 2D
 //
 //
