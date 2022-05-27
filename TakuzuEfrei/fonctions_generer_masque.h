@@ -1,4 +1,4 @@
-//Takuzu Projet C : Florian Poscente / Gas Romain
+//Takuzu Projet C
 //      Ce fichier permet de générer un masque pour les grilles solution
 //
 
