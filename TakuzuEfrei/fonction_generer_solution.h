@@ -1,4 +1,4 @@
-//Takuzu Projet C : Florian Poscente / Gas Romain
+//Takuzu Projet C
 // Ce fichier permets à l'utilisateur de résoudre une matrice
 //
 
